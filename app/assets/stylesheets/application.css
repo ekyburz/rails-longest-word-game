@@ -13,3 +13,41 @@
  *= require_tree .
  *= require_self
  */
+
+ul.custom-list {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+ul.custom-list li {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 128, 255);
+  color: white;
+  font-size: 56px;
+  margin-right: 10px;
+  border: 2px solid white;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+.form-container {
+  margin-top: 20px;
+}
+.custom {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

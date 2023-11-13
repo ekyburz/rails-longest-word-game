@@ -1,0 +1,24 @@
+<div class="h-screen flex flex-col justify-center items-center">
+  <h1 class="text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl mb-4">
+    <span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Countdown</span>
+  </h1>
+
+  <ul class="custom-list">
+    <% @random_letters.each do |letter| %>
+      <li><%= letter %></li>
+    <% end %>
+  </ul>
+
+<p class="custom">Find the longest word!</p>
+  <div class="col-md-6">
+    <form action="/score" data-turbo="false" method="post">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Your Word" name="input_word" aria-describedby="button-addon2">
+        <button type="submit" class="btn btn-outline-secondary" id="button-addon2">Play</button>
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <%= hidden_field_tag :grid, @random_letters %>
+        <%= hidden_field_tag :start_time, @start_time %>
+      </div>
+    </form>
+  </div>
+</div>
